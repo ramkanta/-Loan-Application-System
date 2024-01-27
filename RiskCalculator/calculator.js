@@ -12,34 +12,46 @@ const debt=document.getElementById("debt_previous");
 const annual_income=document.getElementById("annual_income");
 const yearly_spent=document.getElementById("yearly_spent");***/
 
-let YearlySpend = document.getElementById("Yearly_Spend");
-let PreviousLoan = document.getElementById("Previous_Loan");
-let Balance = document.getElementById("Balance_Fd");
-let YearlyIncome = document.getElementById("Yearly_Income");
+const YearlySpend = document.getElementById("Yearly_Spend");
+const PreviousLoan = document.getElementById("Previous_Loan");
+const Balance = document.getElementById("Balance_Fd");
+const YearlyIncome = document.getElementById("Yearly_Income");
 
 /*let a=parseInt(YearlySpend);
 let b=parseInt(PreviousLoan);
 let c=parseInt(Balance);
 let d=parseInt(YearlyIncome);*/
 
-let TotalSpend = document.getElementById("Total");
-let TotalEarning = document.querySelector(".Total_Earning");
-let RiskRatio = document.querySelector(".Risk_Ratio");
+const TotalSpend = document.querySelector(".Total_Spend");
+const TotalEarn = document.querySelector(".Total_Earn");
+const RiskRatio = document.querySelector(".Risk_Ratio");
 
 
-let submitBtn = document.querySelector(".calculator-btn");
+const submitBtn = document.querySelector(".calculator-btn");
 
-submitBtn.addEventListener("click", function()
-{
-    Spend = YearlySpend.value;
-    Loan = PreviousLoan.value; 
-    Balance = Balance.value; 
-    Income = YearlyIncome.value;
+submitBtn.addEventListener("click", function(){
+    // var Spend = YearlySpend;
+    // var Loan = PreviousLoan; 
+    // var Balance = Balance; 
+    // var Income = YearlyIncome;
+    // console.log(Spend);
+    // YearlyIncome = YearlyIncome.ValueOf();
+    // var TSpend = YearlyIncome + PreviousLoan;
+    // var TEarning =  +Balance + +YearlyIncome;
+    // // var RiskRatio = +TSpend/+TEarning;
+    TSpend = +(YearlySpend.value) + +(PreviousLoan.value);
+    console.log(TSpend);
+  
+    TEarn = +(Balance.value) + +(YearlyIncome.value);
+    Rratio = +(TSpend)/+(TEarn);
+    console.log(Rratio);
+    console.log(TEarn);
+    // TSpend = (1 * PreviousLoan.value) + TSpend; 
 
-    TSpend = ( Spend + Loan );
-    TEarning = ( Balance + Income );
-    RiskRatio = (TSpend)/(TEarning);
-    //console.log(TotalSpend);
+    
+    // console.log("+");
+    // console.log(typeof );
+
     //console.log(TotalEarning);
 
     /*let x=parseInt(TSpend);
@@ -52,8 +64,9 @@ submitBtn.addEventListener("click", function()
     
 
     TotalSpend.innerHTML = Math.floor(TSpend);
-    TotalEarning.innerHTML = Math.floor(TEarning);
-    RiskRatio.innerHTML = Math.floor(RiskRatio);
+    // console.log(spending);
+    TotalEarn.innerHTML = Math.floor(TEarn);
+    RiskRatio.innerHTML = Math.floor(Rratio);
   
 
 
@@ -76,7 +89,7 @@ submitBtn.addEventListener("click", function()
         tenure = (loanTenure.value)*12; // 1Year = 12 months
         rate = (loanRate.value)/12/100; // loan rate per year / 100 = loan percentage
 
-        emi = ((amount * rate * (1+rate)**tenure)/(((1+rate)**tenure)-1));
+        
         //console.log(emi);
         total = emi * tenure; // total amount to be paid including interest
         interest = total - amount **/// interest = total amount - principle amount
@@ -116,10 +129,10 @@ submitBtn.addEventListener("click", function()
 
 
     /*amount = loanAmount.value;
-    tenure = (loanTenure.value)*12; // 1Year = 12 months
-    rate = (loanRate.value)/12/100; // loan rate per year / 100 = loan percentage
+    tenure = (loanTenure.value)*12; 
+    rate = (loanRate.value)100;
 
-    emi = ((amount * rate * (1+rate)**tenure)/(((1+rate)**tenure)-1));
+    
     //console.log(emi);
     total = emi * tenure; // total amount to be paid including interest
     interest = total - amount // interest = total amount - principle amount
